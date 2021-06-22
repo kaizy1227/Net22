@@ -1,0 +1,5 @@
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Common\bin\Debug\Common.dll
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Common\bin\Debug\Common.pdb
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Common\obj\Debug\Common.dll
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Common\obj\Debug\Common.pdb

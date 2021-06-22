@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shopping</title>
+
+    <link rel="stylesheet" href="~/Areas/Client/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Assets/js/bootstrap.min.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="/Home/index"><img src="~/Areas/Client/images/logone.jpg" width="125px"></a>
+                </div>
+                <nav>
+                    @{
+                        var session = (UserLogin)Session[NetCuoiKy.Common.CommonConstant.USER_SESSION];
+                    }
+                    @if (session == null)
+                    {
+                        <ul id="MenuItems">
+                            <li><a href="/home">TRANG CHỦ</a></li>
+                            
+                            <li><a href="/about/index">GIỚI THIỆU</a></li>
+                            <li><a href="/contact/index">LIÊN HỆ</a></li>
+                            <li><a href="/user/login">ĐĂNG NHẬP</a></li>
+                            <li><a href="/user/register">ĐĂNG KÝ</a></li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul id="MenuItems">
+                            <li><a href="/home">TRANG CHỦ</a></li>
+                            <li><a href="/about/index">GIỚI THIỆU</a></li>
+                            <li><a href="/contact/index">LIÊN HỆ</a></li>
+                            <li>Xin chào: @session.UserName</li>
+                            <li>@Html.ActionLink("Thoát", "Logout", "User")</li>
+                        </ul>
+                    }
+
+                </nav>
+                <a href="/gio-hang"><img src="~/Areas/Client/images/cart.png" width="30px" height="30px"></a>
+                <img src="~/Areas/Client/images/menu.png" class="menu-icon"
+                     onclick="menutoggle()">
+            </div>
+            @RenderBody()
+            <!-- ------------footer----------- -->
+
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-col-1">
+                            <h3>Tải Ứng Dụng Ngay</h3>
+                            <p>Tải ứng dụng cho Android và ios ngay nào</p>
+                            <div class="app-logo">
+                                <img src="~/Areas/Client/images/play-store.png">
+                                <img src="~/Areas/Client/images/app-store.png">
+                            </div>
+                        </div>
+                        <div class="footer-col-2">
+                            <img src="~/Areas/Client/images/logone.jpg">
+                            <p>
+                                Mục đích của chúng tôi là làm cho nhiều người có thể
+                                có được niềm vui và lợi ích của việc tập luyện thể thao.
+                            </p>
+                        </div>
+                        <div class="footer-col-3">
+                            <h3>Thông Tin</h3>
+                            <ul>
+                                <li><a href="#">Khuyến Mãi</li></a>
+                                <li><a href="#">Sản Phẩm</li></a>
+                                <li><a href="#">Bảo Hành</li></a>
+                                <li><a href="#">Hướng dẫn mua hàng</li></a>
+                            </ul>
+                        </div>
+                        <div class="footer-col-4">
+                            <h3>Follow us</h3>
+                            <ul>
+                                <li><a href="#"> <font color="#3C13F2">Facebook</font></a></li>
+                                <li><a href="#"> <font color="#3C13F2">Twitter</font></a></li>
+                                <li><a href="#"> <font color="#3C13F2">Instagram</font></a></li>
+                                <li><a href="#"> <font color="#3C13F2">Youtube</font></a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ------------------- js for toggle menu-------------- -->
+            <script>
+                var MenuItems = document.getElementById("MenuItems");
+
+                MenuItems.style.maxHeight = "0px";
+
+                function menutoggle() {
+                    if (MenuItems.style.maxHeight == "0px") {
+                        MenuItems.style.maxHeight = "200px";
+                    }
+                    else {
+                        MenuItems.style.maxHeight = "0px";
+                    }
+                }
+
+            </script>
+            @RenderSection("jsFooter", required: false)
+            
+
+</body>
+</html>
+
+

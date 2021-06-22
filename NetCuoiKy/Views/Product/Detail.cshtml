@@ -1,0 +1,168 @@
+﻿@model Model.EF.Product
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var category = (Model.EF.ProductCategory)ViewBag.Category;
+    var relatedProducts = (List<Model.EF.Product>)ViewBag.ReletedProducts;
+
+}
+@{ Html.RenderAction("ProductCategory", "Product");}
+
+<div class="small-container single-product">
+    <div class="row">
+        <div class="col-2">
+            <img src="@Model.Image" width="100%" id="@Model.ID">
+        </div>
+        <div class="col-2">
+            <p>Trang chủ / @category.Name</p>
+            <h1>@Model.Name</h1>
+            <h4>@(Model.Price.HasValue? Model.Price.Value.ToString("N0"):"Liên hệ") vnđ</h4>
+            
+                <input type="number" value="1">
+                <a href="/them-gio-hang?productId=@Model.ID&quantity=1" class="btn">Thêm vào giỏ</a>
+                <h3>
+                    Thông tin sản phẩm
+                    <i class="fa fa-indent"></i>
+                </h3>
+                <br>
+                @Html.Raw(Model.Description)
+        </div>
+    </div>
+</div>
+
+
+<!-- ----- title------------- -->
+<div class="small-container">
+    <div class="row row2">
+        <h2>Sản phẩm liên quan</h2>
+        <p><a href="/san-pham/@category.MetaTilte-@category.ID">Xem tất cả</a></p>
+    </div>
+</div>
+
+<!-- ---------------Products----------------- -->
+<div class="small-container">
+
+    <div class="row">
+        @foreach (var item in relatedProducts)
+        {
+            var url = "/chi-tiet/" + item.MetaTilte + "-" + item.ID;
+            <div class="col-4">
+                <a href="@url"> <img src="@item.Image" alt=""> </a>
+
+                <h4>@item.Name</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>@(Model.Price.HasValue? Model.Price.Value.ToString("N0"):"Liên hệ") vnđ</p>
+            </div>
+        }
+    </div>
+     
+    @*<div class="row-2">
+            <div class="col-4">
+                <img src="~/Areas/Client/images/product-5.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="~/Areas/Client/images/product-6.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="~/Areas/Client/images/product-7.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="~/Areas/Client/images/product-8.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="~/Areas/Client/images/product-9.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="~/Areas/Client/images/product-10.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="~/Areas/Client/images/product-11.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="~/Areas/Client/images/product-12.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+        </div>*@
+    
+</div>
+

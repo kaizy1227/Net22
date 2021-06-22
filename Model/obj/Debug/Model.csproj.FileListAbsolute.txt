@@ -1,0 +1,102 @@
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\bin\Debug\Model.dll.config
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\bin\Debug\Model.dll
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\bin\Debug\Model.pdb
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\bin\Debug\EntityFramework.dll
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\bin\Debug\EntityFramework.xml
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\obj\Debug\Model.dll
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\obj\Debug\Model.pdb
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\bin\Debug\PagedList.dll
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\bin\Debug\PagedList.Mvc.dll
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\bin\Debug\PagedList.xml
+C:\Users\VU HAI\source\repos\NetCuoiKy\Model\bin\Debug\PagedList.Mvc.xml
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\Model.dll.config
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\Model.dll
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\Model.pdb
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\PagedList.dll
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\PagedList.Mvc.dll
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\PagedList.xml
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\PagedList.Mvc.xml
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\obj\Debug\Model.dll
+C:\Users\Admin\Downloads\Compressed\NetCuoiKy\Model\obj\Debug\Model.pdb
+D:\NetCuoiKy\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\NetCuoiKy\Model\obj\Debug\Model.dll
+D:\NetCuoiKy\Model\obj\Debug\Model.pdb
+D:\NetCuoiKy\Model\bin\Debug\Model.dll.config
+D:\NetCuoiKy\Model\bin\Debug\Model.dll
+D:\NetCuoiKy\Model\bin\Debug\Model.pdb
+D:\NetCuoiKy\Model\bin\Debug\EntityFramework.dll
+D:\NetCuoiKy\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\NetCuoiKy\Model\bin\Debug\PagedList.dll
+D:\NetCuoiKy\Model\bin\Debug\PagedList.Mvc.dll
+D:\NetCuoiKy\Model\bin\Debug\EntityFramework.xml
+D:\NetCuoiKy\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\NetCuoiKy\Model\bin\Debug\PagedList.xml
+D:\NetCuoiKy\Model\bin\Debug\PagedList.Mvc.xml
+D:\NetCuoiKy\Model\obj\Debug\Model.csproj.CopyComplete
+D:\NetCuoiKy\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\Model.dll.config
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\Model.dll
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\Model.pdb
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\EntityFramework.dll
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\PagedList.dll
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\PagedList.Mvc.dll
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\EntityFramework.xml
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\PagedList.xml
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\PagedList.Mvc.xml
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\obj\Debug\Model.dll
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\obj\Debug\Model.pdb
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\Common.dll
+C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Model\bin\Debug\Common.pdb
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\bin\Debug\Model.dll.config
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\bin\Debug\Model.dll
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\bin\Debug\Model.pdb
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\bin\Debug\Common.dll
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\bin\Debug\EntityFramework.dll
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\bin\Debug\PagedList.dll
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\bin\Debug\PagedList.Mvc.dll
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\bin\Debug\Common.pdb
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\bin\Debug\EntityFramework.xml
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\bin\Debug\PagedList.xml
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\bin\Debug\PagedList.Mvc.xml
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\obj\Debug\Model.dll
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy\Model\obj\Debug\Model.pdb
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\bin\Debug\Model.dll.config
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\bin\Debug\Model.dll
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\bin\Debug\Model.pdb
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\bin\Debug\Common.dll
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\bin\Debug\EntityFramework.dll
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\bin\Debug\PagedList.dll
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\bin\Debug\PagedList.Mvc.dll
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\bin\Debug\Common.pdb
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\bin\Debug\EntityFramework.xml
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\bin\Debug\PagedList.xml
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\bin\Debug\PagedList.Mvc.xml
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\obj\Debug\Model.dll
+C:\Users\VU HAI\Desktop\GITT\NetCuoiKy-NhomCCH\Model\obj\Debug\Model.pdb
