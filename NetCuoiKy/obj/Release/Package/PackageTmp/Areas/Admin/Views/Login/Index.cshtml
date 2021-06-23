@@ -1,0 +1,42 @@
+﻿@using NetCuoiKy.Models
+@{
+    Layout = null;
+}
+@model LoginModel
+    
+        
+
+<div class="account-page" >
+    <div class="container">
+        <div class="row" >
+            <div class="col-2">
+                <img src="~/Assets/img/image1.png" width="40%"  >
+            </div>
+
+            <div class="col-2">
+                <div class="form-container">
+                    <div class="form-btn">
+                        <span onclick="login()">Login</span>
+                       
+                        <hr id="Indicator">
+                    </div>
+                    @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                    {
+                        @Html.ValidationSummary(false,"", new { @style = "color: red" });
+                        <form id="LoginForm">
+                            @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @autofocus = "autofocus" })
+                            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                            @Html.CheckBoxFor(model => model.RememberMe)Remember Me
+
+                            <button type="submit" class="btn">Login</button>
+                        
+                        </form>
+                    }
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

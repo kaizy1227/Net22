@@ -3,3 +3,9 @@ C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Common\bin\Debug\Common.pdb
 C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Common\obj\Debug\Common.dll
 C:\Users\VU HAI\Downloads\Compressed\NetCuoiKy\Common\obj\Debug\Common.pdb
+C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\Common\bin\Debug\Common.dll
+C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\Common\bin\Debug\Common.pdb
+C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\Common\obj\Debug\Common.csprojAssemblyReference.cache
+C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\Common\obj\Debug\Common.dll
+C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\Common\obj\Debug\Common.pdb

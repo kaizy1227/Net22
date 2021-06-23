@@ -5,31 +5,54 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     var category = (Model.EF.ProductCategory)ViewBag.Category;
     var relatedProducts = (List<Model.EF.Product>)ViewBag.ReletedProducts;
-
+    var hostName = $"{Request.Url.Scheme}://{Request.Url.Host}:44343";
+    //var hostName = "http://85d27ffbdc08.ngrok.io";
 }
+
 @{ Html.RenderAction("ProductCategory", "Product");}
+
+@section SocialSeo{
+    <meta property="og:title" content="@Model.Name" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="@hostName@Context.Request.Path" />
+    <meta property="og:image" content="@hostName@Model.Image" />
+}
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=1449621782097242&autoLogAppEvents=1" nonce="s8LOJyAZ"></script>
+
+
+
 
 <div class="small-container single-product">
     <div class="row">
         <div class="col-2">
-            <img src="@Model.Image" width="100%" id="@Model.ID">
+            <img src="@Model.Image" width="100%" id="@Model.ID" alt="@Model.Name">
         </div>
         <div class="col-2">
+            
             <p>Trang chủ / @category.Name</p>
+            <div class="fb-share-button" data-href="@hostName@Context.Request.Path" data-layout="button_count" data-size="small">
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=@hostName@Context.Request.Path&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">
+                    Chia sẻ
+                </a>
+            </div>
             <h1>@Model.Name</h1>
             <h4>@(Model.Price.HasValue? Model.Price.Value.ToString("N0"):"Liên hệ") vnđ</h4>
-            
-                <input type="number" value="1">
-                <a href="/them-gio-hang?productId=@Model.ID&quantity=1" class="btn">Thêm vào giỏ</a>
-                <h3>
-                    Thông tin sản phẩm
-                    <i class="fa fa-indent"></i>
-                </h3>
-                <br>
-                @Html.Raw(Model.Description)
+
+            <input type="number" value="1">
+            <a href="/them-gio-hang?productId=@Model.ID&quantity=1" class="btn">Thêm vào giỏ</a>
+            <h3>
+                Thông tin sản phẩm
+                <i class="fa fa-indent"></i>
+            </h3>
+            <br>
+            @Html.Raw(Model.Description)
         </div>
     </div>
 </div>
+
+
 
 
 <!-- ----- title------------- -->
@@ -48,7 +71,7 @@
         {
             var url = "/chi-tiet/" + item.MetaTilte + "-" + item.ID;
             <div class="col-4">
-                <a href="@url"> <img src="@item.Image" alt=""> </a>
+                <a href="@url"> <img src="@item.Image" alt="@item.Name"> </a>
 
                 <h4>@item.Name</h4>
                 <div class="rating">
@@ -62,7 +85,7 @@
             </div>
         }
     </div>
-     
+
     @*<div class="row-2">
             <div class="col-4">
                 <img src="~/Areas/Client/images/product-5.jpg">
@@ -163,6 +186,6 @@
                 <p>$50.00</p>
             </div>
         </div>*@
-    
+
 </div>
 

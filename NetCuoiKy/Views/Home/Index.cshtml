@@ -5,7 +5,7 @@
     var listNewProducts = (List<Model.EF.Product>)ViewBag.NewProducts;
     var listFeatureProducts = (List<Model.EF.Product>)ViewBag.ListFeatureProducts;
 }
-@{ Html.RenderAction("ProductCategory","Product");}
+@{ Html.RenderAction("ProductCategory", "Product");}
 
 <div class="row">
 
@@ -34,7 +34,7 @@
     <div class="small-container">
         <div class="row">
             <div class="col-3">
-                <img  src="~/Areas/Client/images/h1.jpg">
+                <img src="~/Areas/Client/images/h1.jpg">
             </div>
             <div class="col-3">
                 <img src="~/Areas/Client/images/h2.jpg">
@@ -54,22 +54,22 @@
         @foreach (var item in listNewProducts)
         {
             var url = "/chi-tiet/" + item.MetaTilte + "-" + item.ID;
-        <div class="col-4">
-            <a href="@url"><img src="@item.Image" alt="@item.Name"></a>
-            <a href="@url"><h4>@item.Name</h4></a>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
+            <div class="col-4">
+                <a href="@url"><img src="@item.Image" alt="@item.Name"></a>
+                <a href="@url"><h4>@item.Name</h4></a>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
 
-                <h4><a href="/them-gio-hang?productId=@item.ID&quantity=1">Thêm giỏ hàng</a></h4>
+                    <h4><a href="/them-gio-hang?productId=@item.ID&quantity=1">Thêm giỏ hàng</a></h4>
+                </div>
+
+                <p>@(item.Price.HasValue ? item.Price.Value.ToString("N0"):"Liên hệ") vnđ</p>
+
             </div>
-
-            <p>@(item.Price.HasValue ? item.Price.Value.ToString("N0"):"Liên hệ") vnđ</p>
-            
-        </div>
         }
 
 
@@ -172,6 +172,34 @@
         </div>
     </div>
 </div>
+<!-- 109343024725749 -->
+<!-- Messenger Plugin chat Code -->
+<div id="fb-root"></div>
+
+<!-- Your Plugin chat code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "109343024725749");
+    chatbox.setAttribute("attribution", "biz_inbox");
+    window.fbAsyncInit = function () {
+        FB.init({
+            xfbml: true,
+            version: 'v11.0'
+        });  
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 <!-- ------------------- brands --------------------- -->
 <div class="brands">
     <div class="small-container">
