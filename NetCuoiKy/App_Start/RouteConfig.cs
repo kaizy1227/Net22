@@ -84,7 +84,12 @@ namespace NetCuoiKy
                defaults: new { controller = "Cart", action = "Success", id = UrlParameter.Optional },
                namespaces: new[] { "NetCuoiKy.Controllers" }
            );
-
+            routes.MapRoute(
+             name: "Payment failed",
+             url: "loi-thanh-toan",
+             defaults: new { controller = "Cart", action = "Failed", id = UrlParameter.Optional },
+             namespaces: new[] { "NetCuoiKy.Controllers" }
+         );
             routes.MapRoute(
                name: "Default",
                url: "{controller}/{action}/{id}",

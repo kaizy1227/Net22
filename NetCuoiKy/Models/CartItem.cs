@@ -11,5 +11,7 @@ namespace NetCuoiKy.Models
     {
         public Product Product { set; get; }
         public int Quantity { set; get; }
+
+        public double Total => (double)(Product.Price * Quantity);
     }
 }

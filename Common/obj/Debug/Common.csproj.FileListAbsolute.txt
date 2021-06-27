@@ -9,3 +9,9 @@ C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\Com
 C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\Common\obj\Debug\Common.dll
 C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\Common\obj\Debug\Common.pdb
+C:\Users\MTU\Downloads\Net22\Common\bin\Debug\Common.dll
+C:\Users\MTU\Downloads\Net22\Common\bin\Debug\Common.pdb
+C:\Users\MTU\Downloads\Net22\Common\obj\Debug\Common.csprojAssemblyReference.cache
+C:\Users\MTU\Downloads\Net22\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\MTU\Downloads\Net22\Common\obj\Debug\Common.dll
+C:\Users\MTU\Downloads\Net22\Common\obj\Debug\Common.pdb

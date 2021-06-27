@@ -10,6 +10,10 @@ using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using System.Data.Entity.Core.Common;
 using Common;
+using PayPal.Api;
+using System.Security.Claims;
+
+using OnlineShoppingStore;
 
 namespace NetCuoiKy.Controllers
 {
@@ -119,7 +123,7 @@ namespace NetCuoiKy.Controllers
         [HttpPost]
         public ActionResult Payment(string shipName, string mobile, string address, string email)
         {
-            var order = new Order();
+            var order = new Model.EF.Order();
             order.CreatedDate = DateTime.Now;
             order.ShipAddress = address;
             order.ShipMobile = mobile;
@@ -162,7 +166,155 @@ namespace NetCuoiKy.Controllers
             }
             return Redirect("/hoan-thanh");
         }
+
+        public List<CartItem> Carts
+        {
+            get
+            {
+                var cart = Session[CartSession];
+                var list = new List<CartItem>();
+                if (cart != null)
+                {
+                    list = (List<CartItem>)cart;
+                }
+                return list;
+            }
+        }
+
+        public ActionResult PaymentWithPaypal()
+        {
+            var apiContext = PaypalConfiguration.GetApiContext();
+
+            try
+            {
+                var payerId = Request.Params["PayerID"];
+
+                if (string.IsNullOrEmpty(payerId))
+                {
+                    if (Request.Url != null)
+                    {
+                        var baseUri = Request.Url.Scheme + "://" + Request.Url.Authority + "/Paypal/PaymentWithPayPal?";
+
+                        var guid = Convert.ToString((new Random()).Next(100000));
+
+                        var createdPayment = CreatePayment(apiContext, baseUri + "guid=" + guid);
+
+
+                        var links = createdPayment.links.GetEnumerator();
+
+                        string paypalRedirectUrl = null;
+
+                        while (links.MoveNext())
+                        {
+                            var lnk = links.Current;
+
+                            if (lnk != null && lnk.rel.ToLower().Trim().Equals("approval_url"))
+                            {
+                                paypalRedirectUrl = lnk.href;
+                            }
+                        }
+                        Session.Add(guid, createdPayment.id);
+                        return Redirect(paypalRedirectUrl);
+                    }
+                }
+                else
+                {
+
+                    var guid = Request.Params["guid"];
+
+                    var executedPayment = ExecutePayment(apiContext, payerId, Session[guid] as string);
+
+                    if (executedPayment.state.ToLower() != "approved")
+                    {
+                        return Redirect("/loi-thanh-toan");
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return Redirect("/loi-thanh-toan");
+            }
+
+            return Redirect("/hoan-thanh");
+        }
+
+        private Payment _payment;
+
+        private Payment ExecutePayment(APIContext apiContext, string payerId, string paymentId)
+        {
+            var paymentExecution = new PaymentExecution { payer_id = payerId };
+            _payment = new Payment { id = paymentId };
+            return _payment.Execute(apiContext, paymentExecution);
+        }
+
+        private Payment CreatePayment(APIContext apiContext, string redirectUrl)
+        {
+            var itemList = new ItemList() { items = new List<Item>() };
+            var total = Carts.Sum(p => p.Total);
+            foreach (var item in Carts)
+            {
+                itemList.items.Add(new Item()
+                {
+                    name = item.Product.Name,
+                    currency = "USD",
+                    price = item.Product.Price.ToString(),
+                    quantity = item.Quantity.ToString(),
+                    sku = "sku"
+                });
+            }
+            var payer = new Payer { payment_method = "paypal" };
+
+            var redirUrls = new RedirectUrls()
+            {
+                cancel_url = redirectUrl,
+                return_url = redirectUrl
+            };
+
+            var details = new Details
+            {
+                tax = "0",
+                shipping = "0",
+                subtotal = total.ToString()
+            };
+
+            var amount = new Amount()
+            {
+                currency = "USD",
+                total = total.ToString(),
+                details = details
+            };
+
+            var transactionList = new List<Transaction>
+            {
+                new Transaction
+                {
+                    description = "Transaction description.",
+                    invoice_number = "your invoice number",
+                    amount = amount,
+                    item_list = itemList
+                }
+            };
+
+
+            this._payment = new Payment
+            {
+                intent = "sale",
+                payer = payer,
+                transactions = transactionList,
+                redirect_urls = redirUrls
+            };
+
+
+            return this._payment.Create(apiContext);
+
+        }
         public ActionResult Success()
+        {
+            return View();
+        }
+
+        public ActionResult Failed()
         {
             return View();
         }
