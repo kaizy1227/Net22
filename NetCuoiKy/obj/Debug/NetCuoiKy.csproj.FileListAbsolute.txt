@@ -1150,3 +1150,6 @@ C:\Users\MTU\Downloads\Net22\NetCuoiKy\obj\Debug\NetCuoiKy.csproj.CoreCompileInp
 C:\Users\MTU\Downloads\Net22\NetCuoiKy\obj\Debug\NetCuoiKy.csproj.CopyComplete
 C:\Users\MTU\Downloads\Net22\NetCuoiKy\obj\Debug\NetCuoiKy.dll
 C:\Users\MTU\Downloads\Net22\NetCuoiKy\obj\Debug\NetCuoiKy.pdb
+C:\Users\MTU\Downloads\Net22\NetCuoiKy\bin\MailChimp.dll
+C:\Users\MTU\Downloads\Net22\NetCuoiKy\bin\ServiceStack.Text.dll
+C:\Users\MTU\Downloads\Net22\NetCuoiKy\bin\ServiceStack.Text.xml
