@@ -15,3 +15,9 @@ C:\Users\MTU\Downloads\Net22\Common\obj\Debug\Common.csprojAssemblyReference.cac
 C:\Users\MTU\Downloads\Net22\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\MTU\Downloads\Net22\Common\obj\Debug\Common.dll
 C:\Users\MTU\Downloads\Net22\Common\obj\Debug\Common.pdb
+C:\Users\VU HAI\Desktop\Net22\Net22\Common\bin\Debug\Common.dll
+C:\Users\VU HAI\Desktop\Net22\Net22\Common\bin\Debug\Common.pdb
+C:\Users\VU HAI\Desktop\Net22\Net22\Common\obj\Debug\Common.csprojAssemblyReference.cache
+C:\Users\VU HAI\Desktop\Net22\Net22\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\VU HAI\Desktop\Net22\Net22\Common\obj\Debug\Common.dll
+C:\Users\VU HAI\Desktop\Net22\Net22\Common\obj\Debug\Common.pdb
