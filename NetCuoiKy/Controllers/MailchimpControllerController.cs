@@ -35,7 +35,12 @@ namespace NetCuoiKy.Controllers
                 textMessage = "Thank you :3"
             };
 
-            return Redirect("/lien-he");
+            return Redirect("/subcribe-thanh-cong");
+        }
+
+        public ActionResult Success()
+        {
+            return View();
         }
     }
 }

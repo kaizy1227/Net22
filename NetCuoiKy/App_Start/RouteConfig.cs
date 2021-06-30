@@ -13,6 +13,12 @@ namespace NetCuoiKy
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+                name: "subcribe",
+                url: "subcribe-thanh-cong",
+                defaults: new { controller = "MailchimpController", action = "Success", id = UrlParameter.Optional },
+                namespaces: new[] { "NetCuoiKy.Controllers" }
+            );
 
 
             routes.MapRoute(

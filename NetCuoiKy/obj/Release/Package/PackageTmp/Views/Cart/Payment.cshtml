@@ -60,6 +60,12 @@
                 </div>
                 <button type="submit" class="btn">Gửi Đơn Hàng</button>
             }
+            @using (Html.BeginForm("PaymentWithPaypal", "Cart"))
+            {
+                <button class="btn">
+                    <img src="~/Areas/Client/images/logo-paypal.png" height="10">
+                </button>
+            }
         </div>
     </div>
 </div>

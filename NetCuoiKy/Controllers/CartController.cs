@@ -20,6 +20,7 @@ namespace NetCuoiKy.Controllers
     public class CartController : Controller
     {
         private const string CartSession = "CartSession";
+        public double TyGiaUSD = 23300;
         // GET: Cart
         public ActionResult Index()
         {
@@ -193,7 +194,7 @@ namespace NetCuoiKy.Controllers
                 {
                     if (Request.Url != null)
                     {
-                        var baseUri = Request.Url.Scheme + "://" + Request.Url.Authority + "/Paypal/PaymentWithPayPal?";
+                        var baseUri = Request.Url.Scheme + "://" + Request.Url.Authority + "/Cart/PaymentWithPayPal?";
 
                         var guid = Convert.ToString((new Random()).Next(100000));
 
@@ -251,14 +252,15 @@ namespace NetCuoiKy.Controllers
         private Payment CreatePayment(APIContext apiContext, string redirectUrl)
         {
             var itemList = new ItemList() { items = new List<Item>() };
-            var total = Carts.Sum(p => p.Total);
+            var total = Math.Round(Carts.Sum(p => p.Total) / TyGiaUSD, 1);
+            //var total = Carts.Sum(p => p.Total);
             foreach (var item in Carts)
             {
                 itemList.items.Add(new Item()
                 {
                     name = item.Product.Name,
                     currency = "USD",
-                    price = item.Product.Price.ToString(),
+                    price = Math.Round((double)item.Product.Price / TyGiaUSD, 1).ToString(),
                     quantity = item.Quantity.ToString(),
                     sku = "sku"
                 });

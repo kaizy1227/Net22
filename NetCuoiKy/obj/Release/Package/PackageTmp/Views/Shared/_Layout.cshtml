@@ -13,8 +13,7 @@
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Assets/js/bootstrap.min.js"></script>
 
-
-
+    @RenderSection("SocialSeo", required: false)
 
 </head>
 
@@ -79,6 +78,13 @@
                             </p>
                         </div>
                         <div class="footer-col-3">
+                            <p>Subcribe để nhận thêm thông tin</p>
+                            @using (Html.BeginForm("AddSubcribeUser", "MailchimpController", FormMethod.Post))
+                            {
+                                <input type="text" id="subcribe" name="subcribe" />
+                                <input type="submit" value="subcribe" />
+
+                            }
                             <h3>Thông Tin</h3>
                             <ul>
                                 <li><a href="#">Khuyến Mãi</li></a>
