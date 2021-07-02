@@ -17,6 +17,11 @@ namespace NetCuoiKy.Controllers
             return View();
         }
 
-        
+        public ActionResult Robots()
+        {
+            Response.ContentType = "text/plain";
+            return View();
+        }
+
     }
 }

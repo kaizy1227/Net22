@@ -20,6 +20,12 @@ namespace NetCuoiKy
                 namespaces: new[] { "NetCuoiKy.Controllers" }
             );
 
+            routes.MapRoute(
+                name: "Robots.txt",
+                url: "robots.txt",
+                defaults: new { controller = "Home", action = "Robots", id = UrlParameter.Optional },
+                namespaces: new[] { "NetCuoiKy.Controllers" }
+            );
 
             routes.MapRoute(
                 name: "Product Category",
