@@ -14,6 +14,8 @@ using PayPal.Api;
 using System.Security.Claims;
 
 using OnlineShoppingStore;
+using MoMo;
+using Newtonsoft.Json.Linq;
 
 namespace NetCuoiKy.Controllers
 {
@@ -309,6 +311,53 @@ namespace NetCuoiKy.Controllers
 
 
             return this._payment.Create(apiContext);
+
+        }
+        public ActionResult ThanhToan()
+        {
+            List<CartItem> cart = Session[CartSession] as List<CartItem>;
+            string endpoint = ConfigurationManager.AppSettings["endpoint"].ToString();
+            string partnercode = ConfigurationManager.AppSettings["partnercode"].ToString();
+            string accesskey = ConfigurationManager.AppSettings["accesskey"].ToString();
+            string serectkey = ConfigurationManager.AppSettings["serectkey"].ToString();
+            string orderInfo = "DH" + DateTime.Now.ToString("yyyyMMddHHmmss");
+            string returnUrl = ConfigurationManager.AppSettings["returnUrl"].ToString();
+            string notifyUrl = ConfigurationManager.AppSettings["notifyUrl"].ToString();
+
+            string amount = cart.Sum(n => n.Total).ToString();
+            string orderid = Guid.NewGuid().ToString();
+            string requestid = Guid.NewGuid().ToString();
+            string extraData = "";
+
+            string rawhash = "partnerCode=" +
+                partnercode + "&accessKey=" +
+                accesskey + "&requestId=" +
+                requestid + "&amount=" +
+                amount + "&orderId=" +
+                orderid + "&orderInfo=" +
+                orderInfo + "&returnUrl=" +
+                returnUrl + "&notifyUrl=" +
+                notifyUrl + "&extraData=" +
+                extraData;
+            MoMoSecurity crypto = new MoMoSecurity();
+            string signature = crypto.signSHA256(rawhash, serectkey);
+            JObject message = new JObject
+            {
+                { "partnerCode", partnercode },
+                { "accessKey", accesskey },
+                { "requestId", requestid },
+                { "amount", amount },
+                { "orderId", orderid },
+                { "orderInfo", orderInfo },
+                { "returnUrl", returnUrl },
+                { "notifyUrl", notifyUrl },
+                { "extraData", extraData },
+                { "requestType", "captureMoMoWallet" },
+                { "signature", signature }
+            };
+            string reponseFromMomo = PaymentRequest.sendPaymentRequest(endpoint, message.ToString());
+            JObject jmessage = JObject.Parse(reponseFromMomo);
+            return Redirect(jmessage.GetValue("payUrl").ToString());
 
         }
         public ActionResult Success()

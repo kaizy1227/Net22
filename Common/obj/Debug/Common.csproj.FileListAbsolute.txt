@@ -21,3 +21,9 @@ C:\Users\VU HAI\Desktop\Net22\Net22\Common\obj\Debug\Common.csprojAssemblyRefere
 C:\Users\VU HAI\Desktop\Net22\Net22\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\VU HAI\Desktop\Net22\Net22\Common\obj\Debug\Common.dll
 C:\Users\VU HAI\Desktop\Net22\Net22\Common\obj\Debug\Common.pdb
+D:\TMDT\New folder\Net22\Common\bin\Debug\Common.dll
+D:\TMDT\New folder\Net22\Common\bin\Debug\Common.pdb
+D:\TMDT\New folder\Net22\Common\obj\Debug\Common.csprojAssemblyReference.cache
+D:\TMDT\New folder\Net22\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\TMDT\New folder\Net22\Common\obj\Debug\Common.dll
+D:\TMDT\New folder\Net22\Common\obj\Debug\Common.pdb
