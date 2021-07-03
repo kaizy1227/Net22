@@ -27,3 +27,9 @@ D:\TMDT\New folder\Net22\Common\obj\Debug\Common.csprojAssemblyReference.cache
 D:\TMDT\New folder\Net22\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 D:\TMDT\New folder\Net22\Common\obj\Debug\Common.dll
 D:\TMDT\New folder\Net22\Common\obj\Debug\Common.pdb
+C:\Users\MTU\Downloads\New folder (2)\Net22\Common\bin\Debug\Common.dll
+C:\Users\MTU\Downloads\New folder (2)\Net22\Common\bin\Debug\Common.pdb
+C:\Users\MTU\Downloads\New folder (2)\Net22\Common\obj\Debug\Common.csprojAssemblyReference.cache
+C:\Users\MTU\Downloads\New folder (2)\Net22\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\MTU\Downloads\New folder (2)\Net22\Common\obj\Debug\Common.dll
+C:\Users\MTU\Downloads\New folder (2)\Net22\Common\obj\Debug\Common.pdb

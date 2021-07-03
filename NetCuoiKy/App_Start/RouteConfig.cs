@@ -28,6 +28,13 @@ namespace NetCuoiKy
             );
 
             routes.MapRoute(
+                  "SiteMap_route", // Route name
+                  "sitemap.xml", // URL with parameters
+                 defaults: new { controller = "Home", action = "SitemapXml", id = UrlParameter.Optional },
+                namespaces: new[] { "NetCuoiKy.Controllers" }
+              );
+
+            routes.MapRoute(
                 name: "Product Category",
                 url: "san-pham/{metatilte}-{cateid}",
                 defaults: new { controller = "Product", action = "Category", id = UrlParameter.Optional },

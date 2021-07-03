@@ -20,6 +20,10 @@ namespace Model.Dao
         {
             return db.Products.OrderByDescending(x => x.CreateDate).Take(top).ToList();
         }
+        public List<Product> ListAllProduct()
+        {
+            return db.Products.ToList();
+        }
         public IEnumerable<Product> listAllPaging(string searchString,int page,int pageSize)
         {
            IQueryable<Product> model = db.Products;
