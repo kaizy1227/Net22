@@ -58,7 +58,7 @@ namespace Model.Dao
         {
             return db.Users.SingleOrDefault(x => x.UserName == userName);
         }
-        public User ViewDetail(int id)
+        public User ViewDetail(long id)
         {
             return db.Users.Find(id);
         }
@@ -144,6 +144,11 @@ namespace Model.Dao
         public bool CheckEmail(string email)
         {
             return db.Users.Count(x => x.Email == email) > 0;
+        }
+        public string getEmailByID(long id)
+        {
+            var user = new UserDao().ViewDetail(id);
+            return user.Email.ToString();
         }
     }
 }

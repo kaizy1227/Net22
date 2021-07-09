@@ -16,6 +16,7 @@ using System.Security.Claims;
 using OnlineShoppingStore;
 using MoMo;
 using Newtonsoft.Json.Linq;
+using NetCuoiKy.Common;
 
 namespace NetCuoiKy.Controllers
 {
@@ -253,6 +254,7 @@ namespace NetCuoiKy.Controllers
 
         private Payment CreatePayment(APIContext apiContext, string redirectUrl)
         {
+            var paypalOrderId = DateTime.Now.Ticks;
             var itemList = new ItemList() { items = new List<Item>() };
             var total = Math.Round(Carts.Sum(p => p.Total) / TyGiaUSD, 1);
             //var total = Carts.Sum(p => p.Total);
@@ -294,7 +296,7 @@ namespace NetCuoiKy.Controllers
                 new Transaction
                 {
                     description = "Transaction description.",
-                    invoice_number = "your invoice number",
+                    invoice_number = paypalOrderId.ToString(),
                     amount = amount,
                     item_list = itemList
                 }
@@ -320,7 +322,12 @@ namespace NetCuoiKy.Controllers
             string partnercode = ConfigurationManager.AppSettings["partnercode"].ToString();
             string accesskey = ConfigurationManager.AppSettings["accesskey"].ToString();
             string serectkey = ConfigurationManager.AppSettings["serectkey"].ToString();
-            string orderInfo = "DH" + DateTime.Now.ToString("yyyyMMddHHmmss");
+            string orderInfo = "";
+            foreach (var Item in cart)
+            {
+                orderInfo = orderInfo + Item.Product.Name.ToString() + Environment.NewLine;
+            }
+            //string orderInfo = "DH" + DateTime.Now.ToString("yyyyMMddHHmmss");
             string returnUrl = ConfigurationManager.AppSettings["returnUrl"].ToString();
             string notifyUrl = ConfigurationManager.AppSettings["notifyUrl"].ToString();
 
@@ -362,6 +369,16 @@ namespace NetCuoiKy.Controllers
         }
         public ActionResult Success()
         {
+            var session = (UserLogin)Session[CommonConstant.USER_SESSION];
+            var dao = new UserDao();
+            var email1 = dao.getEmailByID(session.UserID);
+            string content = System.IO.File.ReadAllText(Server.MapPath("Areas/Client/template/HtmlPage1.html"));
+            content = content.Replace("{{Email}}", email1);
+            var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
+
+            new MailHelper().SendMail(email1, "Đơn hàng mới từ OnlineShop", content);
+            new MailHelper().SendMail(toEmail, "Đơn hàng mới từ OnlineShop", content);
+            DeleteAll();
             return View();
         }
 
