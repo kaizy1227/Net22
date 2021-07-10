@@ -162,6 +162,7 @@ namespace NetCuoiKy.Controllers
 
                 new MailHelper().SendMail(email, "Đơn hàng mới từ OnlineShop", content);
                 new MailHelper().SendMail(toEmail, "Đơn hàng mới từ OnlineShop", content);
+                
             }
             catch (Exception )
             {
@@ -185,6 +186,42 @@ namespace NetCuoiKy.Controllers
             }
         }
 
+        public void save()
+        {
+            var session = (UserLogin)Session[NetCuoiKy.Common.CommonConstant.USER_SESSION];
+            var order = new Model.EF.Order();
+            order.CreatedDate = DateTime.Now;
+            order.ShipAddress = session.Address;
+            order.ShipMobile = session.Phone;
+            order.ShipName = session.UserName;
+            order.ShipEmail = session.Email;
+
+            try
+            {
+                var id = new OrderDao().Insert(order);
+                var cart = (List<CartItem>)Session[CartSession];
+                var detailDao = new Model.Dao.OrderDetailDao();
+                decimal total = 0;
+                foreach (var item in cart)
+                {
+                    var orderDetail = new OrderDetail();
+                    orderDetail.ProductID = item.Product.ID;
+                    orderDetail.OrderID = id;
+                    orderDetail.Price = item.Product.Price;
+                    orderDetail.Quantity = item.Quantity;
+                    detailDao.Insert(orderDetail);
+
+                    total += (item.Product.Price.GetValueOrDefault(0) * item.Quantity);
+                }
+
+            }
+            catch (Exception)
+            {
+                //ghi log
+
+            }
+
+        }
         public ActionResult PaymentWithPaypal()
         {
             var apiContext = PaypalConfiguration.GetApiContext();
@@ -239,7 +276,7 @@ namespace NetCuoiKy.Controllers
             {
                 return Redirect("/loi-thanh-toan");
             }
-
+            save();
             return Redirect("/hoan-thanh");
         }
 
@@ -364,21 +401,25 @@ namespace NetCuoiKy.Controllers
             };
             string reponseFromMomo = PaymentRequest.sendPaymentRequest(endpoint, message.ToString());
             JObject jmessage = JObject.Parse(reponseFromMomo);
+            save();
             return Redirect(jmessage.GetValue("payUrl").ToString());
 
         }
         public ActionResult Success()
         {
-            var session = (UserLogin)Session[CommonConstant.USER_SESSION];
-            var dao = new UserDao();
-            var email1 = dao.getEmailByID(session.UserID);
+            var total = Carts.Sum(p => p.Total);
+            var session = (UserLogin)Session[NetCuoiKy.Common.CommonConstant.USER_SESSION];
             string content = System.IO.File.ReadAllText(Server.MapPath("Areas/Client/template/HtmlPage1.html"));
-            content = content.Replace("{{Email}}", email1);
+            content = content.Replace("{{CustomerName}}", session.UserName);
+            content = content.Replace("{{Phone}}", session.Phone);
+            content = content.Replace("{{Email}}", session.Email);
+            content = content.Replace("{{Address}}", session.Address);
+            content = content.Replace("{{Total}}", total.ToString("N0"));
             var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
 
-            new MailHelper().SendMail(email1, "Đơn hàng mới từ OnlineShop", content);
+            new MailHelper().SendMail(session.Email, "Đơn hàng mới từ OnlineShop", content);
             new MailHelper().SendMail(toEmail, "Đơn hàng mới từ OnlineShop", content);
-            DeleteAll();
+            Session[CartSession] = null;
             return View();
         }
 

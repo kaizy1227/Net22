@@ -69,7 +69,7 @@
     <div class="row">
         @foreach (var item in relatedProducts)
         {
-            var url = "/chi-tiet/" + item.MetaTilte + "-" + item.ID;
+            var url = "/chi-tiet/" + item.ID + "/" + item.MetaTilte;
             <div class="col-4">
                 <a href="@url"> <img src="@item.Image" alt="@item.Name"> </a>
 

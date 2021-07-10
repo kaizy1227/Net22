@@ -43,7 +43,7 @@ namespace NetCuoiKy
 
             routes.MapRoute(
                 name: "Product Detail",
-                url: "chi-tiet/{metatilte}-{id}",
+                url: "chi-tiet/{id}/{metatilte}",
                 defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional },
                 namespaces: new[] { "NetCuoiKy.Controllers" }
 

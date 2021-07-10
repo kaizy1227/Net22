@@ -1865,3 +1865,10 @@ C:\Users\MTU\Downloads\New folder (2)\Net22\NetCuoiKy\obj\Debug\NetCuoiKy.csproj
 C:\Users\MTU\Downloads\New folder (2)\Net22\NetCuoiKy\obj\Debug\NetCuoiKy.csproj.CopyComplete
 C:\Users\MTU\Downloads\New folder (2)\Net22\NetCuoiKy\obj\Debug\NetCuoiKy.dll
 C:\Users\MTU\Downloads\New folder (2)\Net22\NetCuoiKy\obj\Debug\NetCuoiKy.pdb
+C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\NetCuoiKy\bin\log4net.dll
+C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\NetCuoiKy\bin\MailChimp.dll
+C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\NetCuoiKy\bin\PayPal.dll
+C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\NetCuoiKy\bin\ServiceStack.Text.dll
+C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\NetCuoiKy\bin\log4net.xml
+C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\NetCuoiKy\bin\PayPal.xml
+C:\Users\MTU\OneDrive - Hochiminh City University of Education\Desktop\Net22\NetCuoiKy\bin\ServiceStack.Text.xml

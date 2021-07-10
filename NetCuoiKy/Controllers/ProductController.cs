@@ -39,7 +39,7 @@ namespace NetCuoiKy.Controllers
             return View(model);
         }
 
-        public ActionResult Detail( long id)
+        public ActionResult Detail(long id)
         {
             var product = new ProductDao().ViewDetail(id);
             ViewBag.Category = new ProductCategoryDao().ViewDetail(product.CategoryID.Value);

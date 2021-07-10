@@ -40,6 +40,9 @@ namespace NetCuoiKy.Controllers
                     var userSession = new UserLogin();
                     userSession.UserName = user.UserName;
                     userSession.UserID = user.ID;
+                    userSession.Address = user.Address;
+                    userSession.Email = user.Email;
+                    userSession.Phone = user.Phone;
                     Session.Add(CommonConstant.USER_SESSION, userSession);
                     return Redirect("/");
                 }
@@ -109,6 +112,6 @@ namespace NetCuoiKy.Controllers
             }
             return View(model);
         }
-        
+
     }
 }

@@ -13,7 +13,7 @@
     <div class="row">
         @foreach (var item in Model)
         {
-            var link = "/chi-tiet/" + item.MetaTilte + "-" + item.ID;
+            var link = "/chi-tiet/" + item.ID + "/" + item.MetaTilte;
 
         <div class="col-4">
             <a href="@link"><img src="@item.Image"></a>
